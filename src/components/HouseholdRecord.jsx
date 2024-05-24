@@ -43,7 +43,10 @@ function HouseholdRecord() {
                 <td>{index + 1}</td>
                 <td>
                   <Link
-                    to={`/dashboard/household-members/` + item.house_number}
+                    to={
+                      `/community-connect/dashboard/household-members/` +
+                      item.house_number
+                    }
                     className="anchor-tag"
                   >
                     {item.house_number}

@@ -99,7 +99,10 @@ function FamilyMember() {
       <button
         className="btn btn-success official-add-button"
         onClick={() => {
-          navigate(`/dashboard/household-members/` + residents.houseNumber)
+          navigate(
+            `/community-connect/dashboard/household-members/` +
+              residents.houseNumber
+          )
         }}
       >
         Back

@@ -27,7 +27,7 @@ function AddOfficials() {
         )
         .then(result => {
           if (result.data.Status) {
-            navigate("/dashboard/brgy-officials")
+            navigate("/community-connect/dashboard/brgy-officials")
           } else {
             alert(result.data.Error)
           }

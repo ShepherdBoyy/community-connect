@@ -99,7 +99,7 @@ function ViewResident() {
       <button
         className="btn btn-success official-add-button"
         onClick={() => {
-          navigate("/dashboard/residents-record")
+          navigate("/community-connect/dashboard/residents-record")
         }}
       >
         Back

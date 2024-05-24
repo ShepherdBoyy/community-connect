@@ -12,7 +12,7 @@ function Dashboard() {
       .then(result => {
         if (result.data.Status) {
           localStorage.removeItem("valid")
-          navigate("/adminlogin")
+          navigate("/community-connect")
         }
       })
   }
@@ -23,7 +23,7 @@ function Dashboard() {
         <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 menu-background">
           <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
             <Link
-              to="/dashboard"
+              to="/community-connect/dashboard"
               className="d-flex align-items-center pb-3 mb-md-1 mt-md-3 me-md-auto text-white text-decoration-none"
             >
               <span className="fs-5 fw-bolder d-none d-sm-inline text-center">
@@ -36,7 +36,7 @@ function Dashboard() {
             >
               <li className="w-100">
                 <Link
-                  to="/dashboard"
+                  to="/community-connect/dashboard"
                   className="nav-link text-white px-0 align-middle"
                 >
                   <i className="fs-4 ms-2 bi bi-menu-button-wide"></i>
@@ -45,7 +45,7 @@ function Dashboard() {
               </li>
               <li className="w-100">
                 <Link
-                  to="/dashboard/brgy-officials"
+                  to="/community-connect/dashboard/brgy-officials"
                   className="nav-link px-0 align-middle text-white"
                 >
                   <i className="fs-4 bi-people ms-2"></i>
@@ -56,7 +56,7 @@ function Dashboard() {
               </li>
               <li className="w-100">
                 <Link
-                  to="/dashboard/residents-record"
+                  to="/community-connect/dashboard/residents-record"
                   className="nav-link px-0 align-middle text-white"
                 >
                   <i className="fs-4 ms-2 bi bi-person-vcard"></i>
@@ -67,7 +67,7 @@ function Dashboard() {
               </li>
               <li className="w-100">
                 <Link
-                  to="/dashboard/household-record"
+                  to="/community-connect/dashboard/household-record"
                   className="nav-link px-0 align-middle text-white"
                 >
                   <i className="fs-4 ms-2 bi bi-house-door"></i>
@@ -78,7 +78,7 @@ function Dashboard() {
               </li>
               <li className="w-100">
                 <Link
-                  to="/dashboard/settings"
+                  to="/community-connect/dashboard/settings"
                   className="nav-link px-0 align-middle text-white"
                 >
                   <i className="fs-4 ms-2 bi bi-gear"></i>

@@ -39,7 +39,9 @@ function HouseholdMembers() {
           <div className="household-members-details-container">
             <p>
               <Link
-                to={`/dashboard/view-family-member/` + member.id}
+                to={
+                  `/community-connect/dashboard/view-family-member/` + member.id
+                }
                 className="anchor-tag"
               >
                 {member.name}
@@ -53,7 +55,7 @@ function HouseholdMembers() {
       <button
         className="btn btn-success official-add-button"
         onClick={() => {
-          navigate("/dashboard/household-record")
+          navigate("/community-connect/dashboard/household-record")
         }}
       >
         Back

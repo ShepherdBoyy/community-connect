@@ -21,9 +21,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/adminlogin" element={<Login />}></Route>
+        <Route path="/community-connect" element={<Login />}></Route>
         <Route
-          path="/dashboard"
+          path="/community-connect/dashboard"
           element={
             <PrivateRoute>
               <Dashboard />
@@ -32,44 +32,47 @@ function App() {
         >
           <Route path="" element={<Home />}></Route>
           <Route
-            path="/dashboard/brgy-officials"
+            path="/community-connect/dashboard/brgy-officials"
             element={<Officials />}
           ></Route>
           <Route
-            path="/dashboard/residents-record"
+            path="/community-connect/dashboard/residents-record"
             element={<ResidentsRecord />}
           ></Route>
           <Route
-            path="/dashboard/household-record"
+            path="/community-connect/dashboard/household-record"
             element={<HouseholdRecord />}
           ></Route>
           <Route
-            path="/dashboard/add-officials"
+            path="/community-connect/dashboard/add-officials"
             element={<AddOfficials />}
           ></Route>
-          <Route path="/dashboard/settings" element={<Settings />}></Route>
           <Route
-            path="/dashboard/edit-official/:id"
+            path="/community-connect/dashboard/settings"
+            element={<Settings />}
+          ></Route>
+          <Route
+            path="/community-connect/dashboard/edit-official/:id"
             element={<EditOfficial />}
           ></Route>
           <Route
-            path="/dashboard/add-resident"
+            path="/community-connect/dashboard/add-resident"
             element={<AddResident />}
           ></Route>
           <Route
-            path="/dashboard/view-resident/:id"
+            path="/community-connect/dashboard/view-resident/:id"
             element={<ViewResident />}
           ></Route>
           <Route
-            path="/dashboard/edit-resident/:id"
+            path="/community-connect/dashboard/edit-resident/:id"
             element={<EditResident />}
           ></Route>
           <Route
-            path="/dashboard/household-members/:house_number"
+            path="/community-connect/dashboard/household-members/:house_number"
             element={<HouseholdMembers />}
           ></Route>
           <Route
-            path="/dashboard/view-family-member/:id"
+            path="/community-connect/dashboard/view-family-member/:id"
             element={<FamilyMember />}
           ></Route>
         </Route>

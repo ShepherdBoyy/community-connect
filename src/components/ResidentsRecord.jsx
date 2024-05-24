@@ -54,7 +54,7 @@ function ResidentsRecord() {
     <div className="residents-record">
       <div className="residents-record-header">
         <Link
-          to="/dashboard/add-resident"
+          to="/community-connect/dashboard/add-resident"
           className="btn btn-success add-button"
         >
           Add Resident
@@ -111,13 +111,17 @@ function ResidentsRecord() {
                   <td>{item.purok}</td>
                   <td>
                     <Link
-                      to={`/dashboard/view-resident/` + item.id}
+                      to={
+                        `/community-connect/dashboard/view-resident/` + item.id
+                      }
                       className="btn btn-info btn-sm me-2"
                     >
                       <i className="bi bi-eye"></i>
                     </Link>
                     <Link
-                      to={`/dashboard/edit-resident/` + item.id}
+                      to={
+                        `/community-connect/dashboard/edit-resident/` + item.id
+                      }
                       className="btn btn-warning btn-sm me-2"
                     >
                       <i className="bi bi-pencil-square"></i>

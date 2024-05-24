@@ -58,7 +58,7 @@ function EditResident() {
         .then(result => {
           console.log(result)
           if (result.data.Status) {
-            navigate("/dashboard/residents-record")
+            navigate("/community-connect/dashboard/residents-record")
           } else {
             alert(result.data.Error)
           }

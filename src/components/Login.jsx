@@ -24,7 +24,7 @@ function Login() {
         .then(result => {
           if (result.data.loginStatus) {
             localStorage.setItem("valid", true)
-            navigate("/dashboard")
+            navigate("/community-connect/dashboard")
           } else {
             setError(result.data.Error)
           }

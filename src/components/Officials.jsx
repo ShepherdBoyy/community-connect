@@ -55,7 +55,7 @@ function Officials() {
       <div>
         <div className="header-container">
           <Link
-            to="/dashboard/add-officials"
+            to="/community-connect/dashboard/add-officials"
             className="btn btn-success add-button"
           >
             Add Officials
@@ -119,7 +119,10 @@ function Officials() {
                     <td>{item.position}</td>
                     <td>
                       <Link
-                        to={`/dashboard/edit-official/` + item.id}
+                        to={
+                          `/community-connect/dashboard/edit-official/` +
+                          item.id
+                        }
                         className="btn btn-warning btn-sm me-2"
                       >
                         <i className="bi bi-pencil-square"></i>
