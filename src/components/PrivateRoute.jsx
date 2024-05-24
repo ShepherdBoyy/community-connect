@@ -5,7 +5,7 @@ const PrivateRoute = ({ children }) => {
   return localStorage.getItem("valid") ? (
     children
   ) : (
-    <Navigate to="/community-connect" />
+    <Navigate to="/community-connect/" />
   )
 }
 

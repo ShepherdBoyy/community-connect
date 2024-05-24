@@ -12,7 +12,7 @@ function Dashboard() {
       .then(result => {
         if (result.data.Status) {
           localStorage.removeItem("valid")
-          navigate("/community-connect")
+          navigate("/community-connect/")
         }
       })
   }

@@ -21,7 +21,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/community-connect" element={<Login />}></Route>
+        <Route path="/community-connect/" element={<Login />}></Route>
         <Route
           path="/community-connect/dashboard"
           element={
