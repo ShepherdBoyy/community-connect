@@ -40,7 +40,7 @@ function ResidentsRecord() {
         )
         .then(result => {
           if (result.data.Status) {
-            window.location.reload()
+            navigate("/community-connect/dashboard/residents-record")
           } else {
             alert(result.data.Error)
           }
