@@ -40,7 +40,8 @@ function Officials() {
         )
         .then(result => {
           if (result.data.Status) {
-            window.location.reload()
+            alert("Succesfully deleted")
+            navigate("/community-connect/dashboard/brgy-officials")
           } else {
             alert(result.data.Error)
           }

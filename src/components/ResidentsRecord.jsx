@@ -40,6 +40,7 @@ function ResidentsRecord() {
         )
         .then(result => {
           if (result.data.Status) {
+            alert("Succesfully deleted")
             navigate("/community-connect/dashboard/residents-record")
           } else {
             alert(result.data.Error)
