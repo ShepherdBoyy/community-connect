@@ -41,7 +41,7 @@ function Officials() {
         .then(result => {
           if (result.data.Status) {
             alert("Succesfully deleted")
-            navigate("/community-connect/dashboard/brgy-officials")
+            navigate("/community-connect/dashboard")
           } else {
             alert(result.data.Error)
           }
