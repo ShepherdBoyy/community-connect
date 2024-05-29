@@ -205,7 +205,9 @@ function AddResident() {
           />
         </div>
         <div className="input-div">
-          <label htmlFor="addResidentOccupation">Occupation</label>
+          <label htmlFor="addResidentOccupation">
+            Occupation (put Student if you are)
+          </label>
           <input
             type="text"
             id="addResidentOccupation"
