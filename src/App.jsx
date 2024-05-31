@@ -16,6 +16,11 @@ import HouseholdMembers from "./components/HouseholdMembers"
 import FamilyMember from "./components/FamilyMember"
 import Settings from "./components/Settings"
 import PrivateRoute from "./components/PrivateRoute"
+import ChangeUserPass from "./components/ChangeUserPass"
+import CreateAccount from "./components/CreateAccount"
+import DeleteOfficial from "./components/DeleteOfficial"
+import DeleteResident from "./components/DeleteResident"
+import History from "./components/History"
 
 function App() {
   return (
@@ -74,6 +79,26 @@ function App() {
           <Route
             path="/community-connect/dashboard/view-family-member/:id"
             element={<FamilyMember />}
+          ></Route>
+          <Route
+            path="/community-connect/dashboard/settings/change-user"
+            element={<ChangeUserPass />}
+          ></Route>
+          <Route
+            path="/community-connect/dashboard/settings/create-account"
+            element={<CreateAccount />}
+          ></Route>
+          <Route
+            path="/community-connect/dashboard/settings/delete-official/:id"
+            element={<DeleteOfficial />}
+          ></Route>
+          <Route
+            path="/community-connect/dashboard/settings/delete-resident/:id"
+            element={<DeleteResident />}
+          ></Route>
+          <Route
+            path="/community-connect/dashboard/settings/history"
+            element={<History />}
           ></Route>
         </Route>
       </Routes>

@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react"
-import { useNavigate, useParams, Link } from "react-router-dom"
+import { useNavigate, useParams, Link, useLocation } from "react-router-dom"
 import axios from "axios"
 
 function HouseholdMembers() {
   const { house_number } = useParams()
+  const location = useLocation()
   const navigate = useNavigate()
   const [householdMember, setHouseholdMember] = useState([])
+
+  const queryParams = new URLSearchParams(location.search)
+  const membersCount = queryParams.get("name")
 
   useEffect(() => {
     try {
@@ -29,28 +33,36 @@ function HouseholdMembers() {
   return (
     <div className="household-members-container">
       <h3>Household Members</h3>
-      {householdMember.map((member, index) => (
-        <div key={index} className="household-members-information-container">
-          <div className="household-members-details-container">
-            <p>
-              <strong>{member.kinship}:</strong> {/* kinship */}
-            </p>
-          </div>
-          <div className="household-members-details-container">
-            <p>
-              <Link
-                to={
-                  `/community-connect/dashboard/view-family-member/` + member.id
-                }
-                className="anchor-tag"
-              >
-                {member.name}
-                {/* name */}
-              </Link>
-            </p>
-          </div>
-        </div>
-      ))}
+      <table className="table">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Kinship Term</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {householdMember.map((member, index) => (
+            <tr key={index}>
+              <td>{index + 1}</td>
+              <td>{member.kinship}</td>
+              <td>
+                <Link
+                  to={
+                    `/community-connect/dashboard/view-family-member/` +
+                    member.id
+                  }
+                  className="anchor-tag"
+                >
+                  {member.name}
+                </Link>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <h5>Total Members: {membersCount}</h5>
 
       <button
         className="btn btn-success official-add-button"

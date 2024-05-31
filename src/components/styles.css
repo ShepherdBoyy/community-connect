@@ -134,11 +134,10 @@ ul li :hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 50px;
-}
-
-.view-resident-container h3 {
-  font-size: 30px;
+  gap: 20px;
+  padding: 70px;
+  padding-left: 250px;
+  padding-right: 250px;
 }
 
 .information-container {
@@ -170,6 +169,8 @@ ul li :hover {
   align-items: center;
   flex-direction: column;
   gap: 30px;
+  padding-left: 250px;
+  padding-right: 250px;
 }
 
 .household-members-information-container {
@@ -227,18 +228,58 @@ ul li :hover {
 .settings-container {
   height: 94.5%;
   display: flex;
+  padding: 30px;
+  gap: 50px;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  font-size: 15px;
+  height: 50%;
+  color: #3f3f3f;
+}
+
+.icon-container i {
+  font-size: 60px;
+}
+
+.adjust {
+  margin-top: -10px;
+}
+
+.change-settings-container {
+  height: 94.5%;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.settings-form {
+.change-settings-form {
   width: 30%;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.settings-button {
+.change-settings-button {
   margin-top: 30px;
+}
+
+.create-account-container {
+  height: 94.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.create-account-form {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }

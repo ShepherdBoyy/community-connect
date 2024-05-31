@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { useNavigate, useParams, useLocation } from "react-router-dom"
 import axios from "axios"
 
 function FamilyMember() {
   const { id } = useParams()
   const navigate = useNavigate()
+
   const [residents, setResidents] = useState({
     name: "",
     age: "",
@@ -50,52 +51,106 @@ function FamilyMember() {
   return (
     <div className="view-resident-container">
       <h3>More Information</h3>
-      <div className="information-container">
-        <div>
-          <p>
-            <strong>Name:</strong>
-          </p>
-          <p>
-            <strong>Age:</strong>
-          </p>
-          <p>
-            <strong>Sex:</strong>
-          </p>
-          <p>
-            <strong>Date of Birth:</strong>
-          </p>
-          <p>
-            <strong>Home Address:</strong>
-          </p>
-          <p>
-            <strong>Purok:</strong>
-          </p>
-          <p>
-            <strong>Household Number:</strong>
-          </p>
-          <p>
-            <strong>Kinship Term:</strong>
-          </p>
-          <p>
-            <strong>Occupation:</strong>
-          </p>
-          <p>
-            <strong>Educational Attainment</strong>:
-          </p>
-        </div>
-        <div>
-          <p>{residents.name}</p>
-          <p>{residents.age}</p>
-          <p>{residents.sex}</p>
-          <p>{newBirthDate}</p>
-          <p>{residents.address}</p>
-          <p>{residents.purok}</p>
-          <p>{residents.houseNumber}</p>
-          <p>{residents.kinship}</p>
-          <p>{residents.occupation}</p>
-          <p>{residents.educationalAttainment}</p>
-        </div>
-      </div>
+      <table className="table">
+        <thead>
+          <tr>
+            <th>Attribute</th>
+            <th>Information</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>Name:</strong>
+            </td>
+            <td>
+              <p>{residents.name}</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <strong>Age:</strong>
+            </td>
+            <td>
+              <p>{residents.age}</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <strong>Sex:</strong>
+            </td>
+            <td>
+              <p>{residents.sex}</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <strong>Date of Birth:</strong>
+            </td>
+            <td>
+              <p>{newBirthDate}</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <strong>Home Address:</strong>
+            </td>
+            <td>
+              <p>{residents.address}</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <strong>Purok:</strong>
+            </td>
+            <td>
+              <p>{residents.purok}</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <strong>House Number:</strong>
+            </td>
+            <td>
+              <p>{residents.houseNumber}</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <strong>Kinship Term:</strong>
+            </td>
+            <td>
+              <p>{residents.kinship}</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <strong>Occupation:</strong>
+            </td>
+            <td>
+              <p>{residents.occupation}</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <strong>Educational Attainment</strong>
+            </td>
+            <td>
+              <p>{residents.educationalAttainment}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
       <button
         className="btn btn-success official-add-button"
         onClick={() => {

@@ -31,26 +31,6 @@ function Officials() {
       return 0
     })
 
-  const handleDelete = id => {
-    try {
-      axios
-        .delete(
-          "https://community-connect-backend.onrender.com/auth/delete_official/" +
-            id
-        )
-        .then(result => {
-          if (result.data.Status) {
-            alert("Succesfully deleted")
-            navigate("/community-connect/dashboard")
-          } else {
-            alert(result.data.Error)
-          }
-        })
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
   return (
     <div className="officials-container">
       <div>
@@ -128,12 +108,15 @@ function Officials() {
                       >
                         <i className="bi bi-pencil-square"></i>
                       </Link>
-                      <button
+
+                      <Link
+                        to={`/community-connect/dashboard/settings/delete-official/${
+                          item.id
+                        }?name=${encodeURIComponent(item.name)}`}
                         className="btn btn-danger btn-sm"
-                        onClick={() => handleDelete(item.id)}
                       >
                         <i className="bi bi-trash3"></i>
-                      </button>
+                      </Link>
                     </td>
                   </tr>
                 )

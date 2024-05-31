@@ -18,6 +18,26 @@ function AddResident() {
     occupation: "",
   })
 
+  const calculateAge = birthdate => {
+    const today = new Date()
+    const birthDate = new Date(birthdate)
+    let age = today.getFullYear() - birthDate.getFullYear()
+    const monthDifference = today.getMonth() - birthDate.getMonth()
+    if (
+      monthDifference < 0 ||
+      (monthDifference === 0 && today.getDate() < birthDate.getDate())
+    ) {
+      age--
+    }
+    return age
+  }
+
+  const handleBirthdateChange = e => {
+    const birthdate = e.target.value
+    const age = calculateAge(birthdate)
+    setResidents({ ...residents, birthdate, age })
+  }
+
   const handleSubmit = e => {
     e.preventDefault()
 
@@ -76,9 +96,8 @@ function AddResident() {
               id="addResidentAge"
               placeholder="Enter you age"
               className="form-control rounded-0 half-width"
-              onChange={e => {
-                setResidents({ ...residents, age: e.target.value })
-              }}
+              value={residents.age}
+              readOnly
             />
           </div>
           <div className="input-div">
@@ -108,9 +127,7 @@ function AddResident() {
               type="date"
               id="addResidentBirthdate"
               className="form-control rounded-0 half-width"
-              onChange={e => {
-                setResidents({ ...residents, birthdate: e.target.value })
-              }}
+              onChange={handleBirthdateChange}
             />
           </div>
           <div className="input-div">
