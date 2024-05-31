@@ -136,8 +136,8 @@ ul li :hover {
   flex-direction: column;
   gap: 20px;
   padding: 70px;
-  padding-left: 250px;
-  padding-right: 250px;
+  padding-left: 150px;
+  padding-right: 150px;
 }
 
 .information-container {
