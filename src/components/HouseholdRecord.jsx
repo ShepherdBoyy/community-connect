@@ -33,7 +33,7 @@ function HouseholdRecord() {
           <thead>
             <tr>
               <th>No.</th>
-              <th>House Number</th>
+              <th>House Number (Brgy 629 Zone 63 Hipodromo)</th>
               <th>Household Member</th>
             </tr>
           </thead>
