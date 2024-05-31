@@ -35,7 +35,7 @@ function DeleteOfficial() {
         )
         .then(result => {
           if (result.data.Status) {
-            alert("Succesfully deleted")
+            alert("Succesfully Deleted")
             navigate("/community-connect/dashboard")
           } else {
             alert(result.data.Error)
