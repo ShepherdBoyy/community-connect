@@ -7,6 +7,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 120%;
+  object-fit: cover;
 }
 
 .loginForm {
@@ -136,8 +137,8 @@ ul li :hover {
   flex-direction: column;
   gap: 20px;
   padding: 70px;
-  padding-left: 250px;
-  padding-right: 250px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .information-container {
