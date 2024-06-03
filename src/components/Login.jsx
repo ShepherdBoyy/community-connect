@@ -76,7 +76,7 @@ function Login() {
               className="form-control rounded-0"
               onChange={e => {
                 setValues({ ...values, email: e.target.value })
-                setEmail("abad.jm.bscs@gmail.com")
+                setEmail("barangayhipodromo@gmail.com")
               }}
             />
           </div>
