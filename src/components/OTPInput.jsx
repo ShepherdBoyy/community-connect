@@ -115,7 +115,7 @@ function OTPInput() {
           }}
           onClick={() => resendOTP()}
         >
-          {disable ? `Resend OTP in ${timerCount}s` : "Resend OTP"}
+          {disable ? `Resend OTP about ${timerCount}s` : "Resend OTP"}
         </a>
       </div>
     </div>
