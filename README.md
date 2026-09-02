@@ -36,3 +36,14 @@ overview at a glance.
 
 This project was built individually for a Software Engineering course, developed as a 
 full-stack application with a separate React frontend and an Express/MySQL backend.
+
+## Features
+
+- Interactive dashboard displaying total population, male/female resident counts, and total households
+- Barangay Officials Management — add, update, view, and remove official records with photo upload
+- Resident Records module with search functionality for managing digital resident profiles
+- Household Records module tracking households and their members, grouped by house number
+- Deletion history log for tracking removed resident records and reasons
+- Admin authentication with JWT-based session management
+- OTP-based password recovery sent via email
+- Ability to update admin email and password through account settings
