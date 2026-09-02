@@ -18,7 +18,7 @@ A barangay management system that centralizes and simplifies the administration 
     <td align="center"><b>Dashboard</b></td>
   </tr>
   <tr>
-    <td><img src=".github/preview-login.png" width="400"/></td>
-    <td><img src=".github/preview-dashboard.png" width="400"/></td>
+    <td><img src=".github/preview-login.png" width="600"/></td>
+    <td><img src=".github/preview-dashboard.png" width="600"/></td>
   </tr>
 </table>
