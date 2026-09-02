@@ -9,3 +9,12 @@ A barangay management system that centralizes and simplifies the administration 
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
 
 </div>
+
+
+## Preview
+
+**Login**
+![Community Connect login screenshot](.github/preview-login.png)
+
+**Dashboard**
+![Community Connect dashboard screenshot](.github/preview-dashboard.png)
