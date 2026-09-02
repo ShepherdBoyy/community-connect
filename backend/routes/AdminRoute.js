@@ -1,6 +1,7 @@
 import express from "express"
 import con from "../utils/db.js"
 import jwt from "jsonwebtoken"
+import bcrypt from "bcrypt"
 import multer from "multer"
 import path from "path"
 import nodemailer from "nodemailer"
@@ -8,25 +9,73 @@ import nodemailer from "nodemailer"
 const router = express.Router()
 
 router.post("/adminlogin", (req, res) => {
-  const sql = "SELECT * FROM admin WHERE email = ? and password = ?"
-  con.query(sql, [req.body.email, req.body.password], (err, result) => {
+  const sql = "SELECT * FROM admin WHERE email = ?"
+  con.query(sql, [req.body.email], (err, result) => {
     if (err) return res.json({ loginStatus: false, Error: "Query Error" })
-    if (result.length > 0) {
+    if (result.length === 0) {
+      return res.json({ loginStatus: false, Error: "Wrong email or password" })
+    }
+
+    bcrypt.compare(req.body.password, result[0].password, (err, isMatch) => {
+      if (err) return res.json({ loginStatus: false, Error: "Query Error" })
+      if (!isMatch) {
+        return res.json({ loginStatus: false, Error: "Wrong email or password" })
+      }
+
       const email = result[0].email
       const token = jwt.sign(
         { role: "admin", email: email },
-        "jwt_secret_key",
+        process.env.JWT_SECRET,
         {
           expiresIn: "1d",
         }
       )
       res.cookie("token", token)
       return res.json({ loginStatus: true })
-    } else {
-      return res.json({ loginStatus: false, Error: "Wrong email or password" })
-    }
+    })
   })
 })
+
+router.post("/verify_password", (req, res) => {
+  const sql = "SELECT password FROM admin WHERE id = 1"
+  con.query(sql, (err, result) => {
+    if (err) return res.json({ Status: false, Error: "Query Error" })
+    if (result.length === 0) {
+      return res.json({ Status: false, Error: "Admin not found" })
+    }
+
+    bcrypt.compare(req.body.password, result[0].password, (err, isMatch) => {
+      if (err) return res.json({ Status: false, Error: "Query Error" })
+      return res.json({ Status: true, Match: isMatch })
+    })
+  })
+})
+
+router.put("/change_password", (req, res) => {
+  bcrypt.hash(req.body.newPassword, 10, (err, hashedPassword) => {
+    if (err) return res.json({ Status: false, Error: "Error hashing password" })
+
+    const sql = "UPDATE admin SET password = ?, email = ? WHERE id = 1"
+    con.query(sql, [hashedPassword, req.body.newEmail], (err, result) => {
+      if (err) return res.json({ Status: false, Error: "Query Error" })
+      return res.json({ Status: true, Result: result })
+    })
+  })
+})
+
+router.post("/add_account", (req, res) => {
+  bcrypt.hash(req.body.password, 10, (err, hashedPassword) => {
+    if (err) return res.json({ Status: false, Error: "Error hashing password" })
+
+    const sql = "INSERT INTO admin (`email`, `password`) VALUES (?)"
+    const values = [req.body.email, hashedPassword]
+    con.query(sql, [values], (err, result) => {
+      if (err) return res.json({ Status: false, Error: "Query Error" + err })
+      return res.json({ Status: true })
+    })
+  })
+})
+
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {

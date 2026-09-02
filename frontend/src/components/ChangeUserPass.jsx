@@ -1,49 +1,48 @@
 import axios from "axios"
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 
 function ChangeUserPass() {
-  const [oldPassword, setOldPassword] = useState("")
   const [confirmOldPassword, setConfirmOldPassword] = useState("")
   const [newPassword, setNewPassword] = useState("")
   const [newEmail, setNewEmail] = useState("")
 
-  useEffect(() => {
+  const handleSubmit = e => {
+    e.preventDefault()
     try {
       axios
-        .get("https://community-connect-backend.onrender.com/auth/password")
-        .then(result => {
-          setOldPassword(result.data.Result[0].password)
+        .post(
+          "https://community-connect-backend.onrender.com/auth/verify_password",
+          { password: confirmOldPassword }
+        )
+        .then(verifyResult => {
+          if (!verifyResult.data.Status) {
+            alert(verifyResult.data.Error || "Something went wrong")
+            return
+          }
+          if (!verifyResult.data.Match) {
+            alert("Incorrect old password")
+            return
+          }
+
+          axios
+            .put(
+              "https://community-connect-backend.onrender.com/auth/change_password",
+              {
+                newPassword: newPassword,
+                newEmail: newEmail,
+              }
+            )
+            .then(result => {
+              if (result.data.Status) {
+                window.location.reload()
+                alert("Successfully changed email and password")
+              } else {
+                alert(result.data.Error)
+              }
+            })
         })
     } catch (error) {
       console.log(error)
-    }
-  }, [])
-
-  const handleSubmit = e => {
-    e.preventDefault()
-    if (oldPassword === confirmOldPassword) {
-      try {
-        axios
-          .put(
-            "https://community-connect-backend.onrender.com/auth/change_password",
-            {
-              newPassword: newPassword,
-              newEmail: newEmail,
-            }
-          )
-          .then(result => {
-            if (result.data.Status) {
-              window.location.reload()
-              alert("Successfully changed email and password")
-            } else {
-              alert(result.data.Error)
-            }
-          })
-      } catch (error) {
-        console.log(error)
-      }
-    } else {
-      alert("Incorrect old password")
     }
   }
 
