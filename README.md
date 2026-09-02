@@ -47,3 +47,16 @@ full-stack application with a separate React frontend and an Express/MySQL backe
 - Admin authentication with JWT-based session management
 - OTP-based password recovery sent via email
 - Ability to update admin email and password through account settings
+
+## Project Setup
+
+This project is split into two parts, each with its own setup instructions and tech stack:
+
+- [`backend/`](backend/README.md) — Express + MySQL REST API
+- [`frontend/`](frontend/README.md) — React client application
+
+See each folder's README for installation steps, environment variables, and project structure.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
