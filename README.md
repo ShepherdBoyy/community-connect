@@ -10,11 +10,15 @@ A barangay management system that centralizes and simplifies the administration 
 
 </div>
 
-
 ## Preview
 
-**Login**
-![Community Connect login screenshot](.github/preview-login.png)
-
-**Dashboard**
-![Community Connect dashboard screenshot](.github/preview-dashboard.png)
+<table>
+  <tr>
+    <td align="center"><b>Login</b></td>
+    <td align="center"><b>Dashboard</b></td>
+  </tr>
+  <tr>
+    <td><img src=".github/preview-login.png" width="400"/></td>
+    <td><img src=".github/preview-dashboard.png" width="400"/></td>
+  </tr>
+</table>
