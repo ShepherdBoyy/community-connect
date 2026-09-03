@@ -148,3 +148,7 @@ All routes are prefixed with `/auth`. Below is a summary grouped by resource.
 | ------ | ----------------- | ------------------------------------ |
 | GET    | `/history`        | Get deletion history log             |
 | POST   | `/delete_history` | Remove an entry from the history log |
+
+## License
+
+This project is licensed under the [MIT License](../LICENSE).
