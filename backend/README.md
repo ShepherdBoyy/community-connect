@@ -2,7 +2,7 @@
 
 # Community Connect - Backend
 
-Express + MySQL REST API powering the Community Connect barangay management system.
+Express + MySQL REST API
 
 </div>
 
