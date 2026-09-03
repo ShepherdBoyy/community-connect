@@ -20,3 +20,37 @@ Express + MySQL REST API powering the Community Connect barangay management syst
 | cookie-parser | Reading auth cookies | 1.4.6 |
 | CORS | Cross-origin request handling | 2.8.5 |
 | dotenv | Environment variable management | 16.4.5 |
+
+## Installation
+
+1. Navigate into the backend directory
+```bash
+    cd backend
+```
+
+2. Install dependencies
+```bash
+    npm install
+```
+
+3. Create a `.env` file based on `.env.example` and fill in your own values
+```bash
+    cp .env.example .env
+```
+
+4. Import the database schema
+```bash
+    mysql -u your_username -p barangay_database < barangayDatabase.sql
+```
+
+5. Start the development server (auto-restarts on file changes)
+```bash
+    npm run dev
+```
+
+    Or start it normally:
+```bash
+    npm start
+```
+
+6. The API will be running at `http://localhost:5000` (or whichever `PORT` you set in `.env`)
