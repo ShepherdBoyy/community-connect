@@ -55,13 +55,9 @@ frontend/
 │   │   ├── Login.jsx, PrivateRoute.jsx
 │   │   ├── Reset.jsx, OTPInput.jsx
 │   │   ├── Dashboard.jsx, Home.jsx
-│   │   ├── Officials.jsx, AddOfficials.jsx,
-│   │   │   EditOfficial.jsx, DeleteOfficial.jsx
-│   │   ├── ResidentsRecord.jsx, AddResident.jsx,
-│   │   │   EditResident.jsx, DeleteResident.jsx,
-│   │   │   ViewResident.jsx
-│   │   ├── HouseholdRecord.jsx, HouseholdMembers.jsx,
-│   │   │   FamilyMember.jsx
+│   │   ├── Officials.jsx, AddOfficials.jsx, EditOfficial.jsx, DeleteOfficial.jsx
+│   │   ├── ResidentsRecord.jsx, AddResident.jsx, EditResident.jsx, DeleteResident.jsx, ViewResident.jsx
+│   │   ├── HouseholdRecord.jsx, HouseholdMembers.jsx, FamilyMember.jsx
 │   │   ├── History.jsx
 │   │   ├── Settings.jsx, ChangeUserPass.jsx,
 │   │   │   CreateAccount.jsx
