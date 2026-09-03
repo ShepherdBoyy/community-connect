@@ -1,6 +1,10 @@
+<div align="center">
+
 # Community Connect - Backend
 
 Express + MySQL REST API powering the Community Connect barangay management system.
+
+</div>
 
 ## Tech Stack
 
