@@ -95,3 +95,56 @@ backend/
 ├── index.js                       # App entry point
 └── package.json
 ```
+
+## API Overview
+
+All routes are prefixed with `/auth`. Below is a summary grouped by resource.
+
+### Authentication
+
+| Method | Endpoint               | Description                       |
+| ------ | ---------------------- | --------------------------------- |
+| POST   | `/adminlogin`          | Log in and receive a JWT token    |
+| GET    | `/logout`              | Clear the auth token              |
+| POST   | `/verify_password`     | Verify the current admin password |
+| PUT    | `/change_password`     | Update admin email and password   |
+| POST   | `/add_account`         | Create a new admin account        |
+| POST   | `/send_recovery_email` | Send an OTP for password recovery |
+
+### Barangay Officials
+
+| Method | Endpoint               | Description                            |
+| ------ | ---------------------- | -------------------------------------- |
+| POST   | `/add_official`        | Add a new official (with photo upload) |
+| GET    | `/official`            | Get all officials                      |
+| GET    | `/official/:id`        | Get a single official by ID            |
+| PUT    | `/edit_official/:id`   | Update an official's details           |
+| DELETE | `/delete_official/:id` | Remove an official                     |
+
+### Residents
+
+| Method | Endpoint               | Description                         |
+| ------ | ---------------------- | ----------------------------------- |
+| POST   | `/add_resident`        | Add a new resident                  |
+| GET    | `/residents`           | Get all residents                   |
+| GET    | `/residents/:id`       | Get a single resident by ID         |
+| PUT    | `/edit_residents/:id`  | Update a resident's details         |
+| DELETE | `/delete_resident/:id` | Remove a resident (logs to history) |
+
+### Households & Dashboard Stats
+
+| Method | Endpoint                           | Description                            |
+| ------ | ---------------------------------- | -------------------------------------- |
+| GET    | `/household_record`                | Get all households                     |
+| GET    | `/household_members/:house_number` | Get all residents under a house number |
+| GET    | `/residents_count`                 | Get total resident count               |
+| GET    | `/male_count`                      | Get total male resident count          |
+| GET    | `/female_count`                    | Get total female resident count        |
+| GET    | `/household_count`                 | Get total household count              |
+
+### History
+
+| Method | Endpoint          | Description                          |
+| ------ | ----------------- | ------------------------------------ |
+| GET    | `/history`        | Get deletion history log             |
+| POST   | `/delete_history` | Remove an entry from the history log |
