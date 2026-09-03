@@ -45,3 +45,30 @@ React client application
 > `https://community-connect-backend.onrender.com`. To run it against a local backend instead,
 > update the API base URL in the relevant components (e.g., `Login.jsx`, `ChangeUserPass.jsx`)
 > to point to your local backend, such as `http://localhost:5000`.
+
+## Project Structure
+
+```
+frontend/
+├── src/
+│   ├── components/
+│   │   ├── Login.jsx, PrivateRoute.jsx
+│   │   ├── Reset.jsx, OTPInput.jsx
+│   │   ├── Dashboard.jsx, Home.jsx
+│   │   ├── Officials.jsx, AddOfficials.jsx,
+│   │   │   EditOfficial.jsx, DeleteOfficial.jsx
+│   │   ├── ResidentsRecord.jsx, AddResident.jsx,
+│   │   │   EditResident.jsx, DeleteResident.jsx,
+│   │   │   ViewResident.jsx
+│   │   ├── HouseholdRecord.jsx, HouseholdMembers.jsx,
+│   │   │   FamilyMember.jsx
+│   │   ├── History.jsx
+│   │   ├── Settings.jsx, ChangeUserPass.jsx,
+│   │   │   CreateAccount.jsx
+│   │   └── styles.css
+│   ├── App.jsx
+│   └── main.jsx
+├── index.html
+├── package.json
+└── vite.config.js
+```
