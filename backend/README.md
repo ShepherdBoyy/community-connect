@@ -65,15 +65,33 @@ Or start it normally:
 
 Create a `.env` file in the `backend/` directory with the following variables:
 
-| Variable  | Description                             |
-| --------- | --------------------------------------- |
-| `PORT`    | Port the server runs on (e.g., `5000`)  |
-| `DB_HOST` | MySQL database host (e.g., `localhost`) |
-| `DB_USER` | MySQL database username |
-| `DB_PASSWORD` | MySQL database password |
-| `DB_DATABASE` | Database name (e.g., `barangay_database`) |
-| `JWT_SECRET` | Secret key used to sign authentication tokens - use a long, random string |
-| `MY_EMAIL` | Gmail address used to send OTP password recovery emails |
+| Variable      | Description                                                                |
+| ------------- | -------------------------------------------------------------------------- |
+| `PORT`        | Port the server runs on (e.g., `5000`)                                     |
+| `DB_HOST`     | MySQL database host (e.g., `localhost`)                                    |
+| `DB_USER`     | MySQL database username                                                    |
+| `DB_PASSWORD` | MySQL database password                                                    |
+| `DB_DATABASE` | Database name (e.g., `barangay_database`)                                  |
+| `JWT_SECRET`  | Secret key used to sign authentication tokens - use a long, random string  |
+| `MY_EMAIL`    | Gmail address used to send OTP password recovery emails                    |
 | `MY_PASSWORD` | Gmail App Password for the above account (not your regular Gmail password) |
 
 A template is available in [`.env.example`](.env.example) - copy it to `.env` and fill in your own values.
+
+## Project Structure
+
+```
+backend/
+├── public/
+│   └── images/                    # Uploaded official photos (served statically)
+├── routes/
+│   └── AdminRoute.js              # All API routes — auth, officials, residents, history
+├── scripts/
+│   └── hashExistingPasswords.js   # One-off migration script for password hashing
+├── utils/
+│   └── db.js                      # MySQL connection setup
+├── .env.example                   # Template for required environment variables
+├── schema.sql                     # Database schema (tables only, no data)
+├── index.js                       # App entry point
+└── package.json
+```
